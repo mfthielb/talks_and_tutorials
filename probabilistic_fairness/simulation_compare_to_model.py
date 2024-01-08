@@ -10,6 +10,8 @@ from constants import Constants
 from sklearn.metrics import confusion_matrix
 from test_utils_proba import UtilsProbaSimulator
 
+output_path='~/Documents/data/jurity_tests/simulations/model_v_prob/'
+
 def performance_measures(ground_truth: np.ndarray,
                          predictions: np.ndarray) -> dict:
     """Compute various performance measures, optionally conditioned on protected attribute.
@@ -65,11 +67,11 @@ else:
            "extremely_unfair":extremely_unfair_sim}
 surrogates=pd.read_csv('./supporting_data/sampled_surrogate_inputs.csv')
 if testing_simulation:
-    prob_output_string = '~/Documents/data/jurity_tests/simulations//model_v_prob/{0}_prob_simulation_{1}_surrogates_{2}_count_test.csv'
-    model_output_string = '~/Documents/data/jurity_tests/simulations/model_v_prob/{0}_model_simulation_{1}_surrogates_{2}_count_test.csv'
+    prob_output_string = output_path+'{0}_prob_simulation_{1}_surrogates_{2}_count_test.csv'
+    model_output_string = output_path+'{0}_model_simulation_{1}_surrogates_{2}_count_test.csv'
 else:
-    prob_output_string = '~/Documents/data/jurity_tests/simulations/model_v_prob/{0}_prob_simulation_{1}_surrogates_{2}_count.csv'
-    model_output_string = '~/Documents/data/jurity_tests/simulations/model_v_prob/{0}_model_simulation_{1}_surrogates_{2}_count.csv'
+    prob_output_string = output_path+'{0}_prob_simulation_{1}_surrogates_{2}_count.csv'
+    model_output_string = output_path+'{0}_model_simulation_{1}_surrogates_{2}_count.csv'
 
 def generate_test_data(simulator, membership_df,count_mean,rng=np.random.default_rng()):
     membership_df["count"]=pd.Series(rng.poisson(lam=count_mean,size=membership_df.shape[0]))
