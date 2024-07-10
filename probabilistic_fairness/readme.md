@@ -78,6 +78,6 @@ Our analysis of probabilistic fairness and its expected behavior are based on si
 
 Our experiments use the same [helper methods provided in Jurity](https://github.com/fidelity/jurity/blob/master/jurity/utils_proba.py). More specifically; 
 * [simulation.py](https://github.com/mfthielb/talks_and_tutorials/blob/master/probabilistic_fairness/simulation.py): Runs the code to create simulated model results with different levels of unfairness. This corresponds to **Table 3** in the paper.
-* [simulation_compare_to_model.py](https://github.com/mfthielb/talks_and_tutorials/blob/master/probabilistic_fairness/simulation_compare_to_model.py): Compares probabilistic fairness estimates to using models that try to predict protected class membership. This corresponds to **Figure 3** in the paper.
-* [simulation_counts.py](https://github.com/mfthielb/talks_and_tutorials/blob/master/probabilistic_fairness/simulation_counts.py): Compares the characteristics of the method with respect to the counts of surrogate membership within each group. This corresponds to **Figure 4** in the paper.
+* [simulation_compare_to_model.py](https://github.com/mfthielb/talks_and_tutorials/blob/master/probabilistic_fairness/simulation_compare_to_model.py): Compares probabilistic fairness estimates to using models that try to predict protected class membership. This corresponds to **Figure 2** in the paper.
+* [simulation_counts.py](https://github.com/mfthielb/talks_and_tutorials/blob/master/probabilistic_fairness/simulation_counts.py): Compares the characteristics of the method with respect to the counts of surrogate membership within each group. This corresponds to **Figured 3 and 4** in the paper.
   
