@@ -1,6 +1,6 @@
 # Reusability, Repeatability, Reproducibility, Replicability of the Probabilistic Fairness Methodology 
 
-The goal of this repo is to provide sources for the reusability, repeatability, reproducibility, replicability of the Probabilistic Fairness Methodology, presented in [Surrogate Modeling to Address the Absence of Protected Membership Attributes in Fairness Evaluation](), in accordance with the [ACM Artifacts](https://www.acm.org/publications/policies/artifact-review-badging). 
+The goal of this repo is to provide sources for the reusability, repeatability, reproducibility, and replicability of the Probabilistic Fairness Methodology, presented in [Surrogate Modeling to Address the Absence of Protected Membership Attributes in Fairness Evaluation](), in accordance with the [ACM Artifacts](https://www.acm.org/publications/policies/artifact-review-badging). 
 
 We provide two primary sources of artifacts: 
 1. **Reusability**: Our probabilistic fairness methodology is implemented and released as part of the open-source fairness evaluation library, [Fidelity Jurity](https://github.com/fidelity/jurity). Other researchers and practitioners can use our method via a simple `pip install jurity`. You can find a quick start usage example below. 
@@ -33,7 +33,7 @@ surrogates = [0, 2, 0, 1]
 print("Binary Fairness score: ", metric.get_score(binary_predictions, memberships, surrogates))
 ```
 
-Existing binary fairness metrics assume that we have access to the protected membership attribute of every individual. You can read more about these classical metrics in [our documentation](https://fidelity.github.io/jurity/about_fairness.html).
+Existing binary fairness metrics assume that we have access to every individual's protected membership attribute. You can read more about these classical metrics in [our documentation](https://fidelity.github.io/jurity/about_fairness.html).
 
 What if we do not know each sample's protected membership attribute? This is a practical scenario that we refer to as probabilistic fairness evaluation.
 
@@ -47,7 +47,7 @@ We provide an in-depth study and formal treatment of probabilistic fairness in [
 
 ### Installation 
 
-Our fairness library, Jurity, is open-source and is part of the Python Package Index (PyPI) making it easy to install via: 
+Our fairness library, Jurity, is open-source and is part of the Python Package Index (PyPI), making it easy to install via: 
 
 ```
 pip install jurity
@@ -77,6 +77,7 @@ The datasets used in our paper can be found under [datasets folder](https://gith
 Our analysis of probabilistic fairness and its expected behavior are based on simulations from hypothetical models with different levels of unfairness, as explained in **Table 3** in the paper. 
 
 Our experiments use the same [helper methods provided in Jurity](https://github.com/fidelity/jurity/blob/master/jurity/utils_proba.py). More specifically; 
-* [simulation.py]: Runs the code to create simulated model results with different levels of unfairness. This corresponds to **Table 2** and **Figure 3** in the paper.
-* [simulation_compare_to_model.py]: Compares probabilistic fairness estimates to using models that try to predict protected class membership. This corresponds to **Figure 2** in the paper.
-
+* [simulation.py](https://github.com/mfthielb/talks_and_tutorials/blob/master/probabilistic_fairness/simulation.py): Runs the code to create simulated model results with different levels of unfairness. This corresponds to **Table 2** and **Figure 3** in the paper.
+* [simulation_compare_to_model.py](https://github.com/mfthielb/talks_and_tutorials/blob/master/probabilistic_fairness/simulation_compare_to_model.py): Compares probabilistic fairness estimates to using models that try to predict protected class membership. This corresponds to **Figure 2** in the paper.
+* [simulation_counts.py](https://github.com/mfthielb/talks_and_tutorials/blob/master/probabilistic_fairness/simulation_counts.py): Compares the characteristics of the method with respect to the counts of surrogate membership within each group. This corresponds to **Figure 4** in the paper.
+  
